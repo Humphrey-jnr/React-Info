@@ -1,20 +1,27 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import "./index.css";
 
 const Header =()=>{
   return(
     <header>
-      <nav>
-        <img src="./logo192.png"alt="logo"></img>
+      <nav className="nav-bar">
+        <img src="./logo192.png"alt="logo" className="logo"></img>
+        <ul className="nav-menu">
+          <li>Pricing</li>
+          <li>Menu</li>
+          <li>About</li>
+
+        </ul>
       </nav>
     </header>
   )
 }
-const Page =()=> {
-  return (
-   <div>
-    <Header/>
-      <h1>Fun Facts About React</h1>
+
+const Body=()=>{
+  return(
+    <div>
+      <h1><b>Fun Facts About React</b></h1>
       <ol>
         <li>Was First Released in 2013</li>
         <li>Was Originally Created by Jordan Walke</li>
@@ -22,14 +29,28 @@ const Page =()=> {
         <li>Is maintained by Facebook</li>
         <li>Powers thousands of enterprise apps, including mobile apps</li>
       </ol>
-      <Footer/>
+    </div>
+
+  )
+}
+
+const Footer=()=>{
+  return(
+    <small>2022 Ben Hamphrey All Rights Reserved</small>
+  )
+}
+
+const Page =()=> {
+  return (
+   <div>
+    <Header/>
+    <Body/>
+    <Footer/>
 
    </div>
   )
 }
 
-const Footer=()=>{
-  <h4>2022 Ben Hamphrey All Rights Reserved</h4>
-}
+
 ReactDOM.render(<Page/>,document.getElementById("root"))
 
